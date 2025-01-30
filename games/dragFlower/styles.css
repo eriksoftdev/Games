@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    font-family: poppins;
+}
+
+body {
+
+
+background-image: url("images/pasto.png");
+
+}
+
+.container {
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 1%;
+    }
+
+.container img{
+    max-inline-size: 100%;
+    block-size: auto;
+    margin: 0;
+}
+
+.flower{
+    margin-top: 10%;
+    position: relative;
+}
+
+.silaba {
+    
+    background-color: rgba(255, 255, 255, 0.007); 
+    color: white;
+    position: absolute;
+    font-size: 35px;
+    font-weight: bold;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Permite que los eventos pasen a través del elemento */
+
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: chocolate;
+    width: 100%;
+    left: 0;
+}
+
+.flowerpot {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+}
+
+.flowerpot img {
+        max-inline-size: 100%;
+        block-size: auto;
+}
+
+
+.maceta {
+    position:relative;
+}
+
+.silabaFooter {
+    background-color: rgba(255, 255, 255, 0.007);
+    color: red;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Permite que los eventos pasen a través del elemento */
+
+}
+
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+

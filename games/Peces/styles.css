@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    /* font-family: 'Bubblegum Sans', cursive; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #89CFF0 0%, #1E90FF 50%, #00008B 100%);
+    overflow: hidden;
+}
+
+#sea {
+    position: absolute;
+    top: 68%;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+        
+        top: 90%;
+        
+    }
+    
+}
+
+#target-syllable {
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    transform: translateX(-50%);
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    @media screen and (max-width: 768px) {
+        top: 12%;
+        font-size: 24px;
+        
+    }
+}
+
+.fish {
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    width: 140px;
+    height: 80px;
+    transition: transform 0.5s ease-out;
+    animation: swim 10s infinite alternate ease-in-out;
+}
+
+@keyframes swim {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(20px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateX(-20px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+.fish-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FF6347;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: colorChange 5s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.fish-eye {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    top: 15px;
+    right: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    animation: blink 3s infinite;
+}
+
+/* ojo pez izquierdo */
+
+.fish-eye-left {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    top: 15px;
+    right: 95px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    animation: blink 3s infinite;
+}
+
+
+@keyframes blink {
+
+    0%,
+    90%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    95% {
+        transform: scaleY(0.1);
+    }
+}
+
+.fish-pupil {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    top: 6px;
+    right: 2px;
+}
+
+/* Pupila pez izquierdo */
+
+.fish-pupil-left {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    top: 6px;
+    left: 2px;
+}
+
+
+
+
+
+.fish-tail {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 50px solid #FF6347;
+    left: -45px;
+    top: 10px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    animation: tailWag 0.5s infinite alternate ease-in-out;
+    transform: rotate(180deg);
+}
+
+.fish-tail-left {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 50px solid #FF6347;
+    right: -45px;
+    top: 10px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    animation: tailWag 0.5s infinite alternate ease-in-out;
+    transform: rotate(180deg);
+}
+
+
+@keyframes tailWag {
+    0% {
+        transform: rotateY(140deg);
+    }
+
+    100% {
+        transform: rotateY(170deg);
+    }
+}
+
+.fish-fin {
+    position: absolute;
+    width: 35px;
+    height: 25px;
+    background-color: #FF6347;
+    border-radius: 50% 50% 0 0;
+    top: -15px;
+    left: 50px;
+    transform: rotate(-30deg);
+    animation: finMove 1s infinite alternate ease-in-out;
+}
+
+@keyframes finMove {
+    0% {
+        transform: rotate(-30deg);
+    }
+
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+.fish-text {
+    position: absolute;
+    /* font-family: 'Fredoka One', cursive; */
+    font-family: Poppins, sans-serif;
+    font-size: 26px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: textPulse 2s infinite alternate;
+}
+
+@keyframes textPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+#score-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media (max-width: 768px) {
+        font-size: 18px;
+        
+    }
+}
+
+#score,
+#misses {
+    margin: 5px 0;
+}
+
+.bubble {
+    position: absolute;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    animation: rise 4s linear;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(0.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.water-ripple {
+    position: absolute;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: ripple 1.5s linear;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+    }
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C150,70 300,0 450,40 C600,80 750,10 900,40 C1050,70 1200,0 1350,40 L1350,120 L0,120 Z" fill="%2300CED1" opacity="0.6"/><path d="M0,60 C150,90 300,20 450,60 C600,100 750,30 900,60 C1050,90 1200,20 1350,60 L1350,120 L0,120 Z" fill="%2348D1CC" opacity="0.4"/><path d="M0,80 C150,110 300,40 450,80 C600,120 750,50 900,80 C1050,110 1200,40 1350,80 L1350,120 L0,120 Z" fill="%2340E0D0" opacity="0.2"/></svg>') repeat-x;
+    animation: wave 6s linear infinite;
+    transform: translateX();
+}
+
+
+
+.wave1 {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C150,70 300,0 450,40 C600,80 750,10 900,40 C1050,70 1200,0 1350,40 L1350,120 L0,120 Z" fill="%2300CED1" opacity="0.8"/><path d="M0,60 C150,90 300,20 450,60 C600,100 750,30 900,60 C1050,90 1200,20 1350,60 L1350,120 L0,120 Z" fill="%2348D1CC" opacity="0.8"/><path d="M0,80 C150,110 300,40 450,80 C600,120 750,50 900,80 C1050,110 1200,40 1350,80 L1350,120 L0,120 Z" fill="%2340E0D0" opacity="0.9"/></svg>') repeat-x;
+    animation: wave 7s linear infinite;
+    transform: translateX(0);
+}
+
+
+.wave2 {
+    z-index: -2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C150,70 300,0 450,40 C600,80 750,10 900,40 C1050,70 1200,0 1350,40 L1350,120 L0,120 Z" fill="%2300CED1" opacity="0.8"/><path d="M0,60 C150,90 300,20 450,60 C600,100 750,30 900,60 C1050,90 1200,20 1350,60 L1350,120 L0,120 Z" fill="%2348D1CC" opacity="0.8"/><path d="M0,80 C150,110 300,40 450,80 C600,120 750,50 900,80 C1050,110 1200,40 1350,80 L1350,120 L0,120 Z" fill="%2340E0D0" opacity="0.9"/></svg>') repeat-x;
+    animation: wave 8s linear infinite;
+    transform: translateX(-50%);
+}
+
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+.seagull {
+    position: absolute;
+    font-size: 40px;
+    animation: fly 20s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateX(-100vw) translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(-50vw) translateY(-20px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateX(50vw) translateY(-20px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateX(100vw) translateY(0) rotate(0deg);
+    }
+}
+
+.cloud {
+    position: absolute;
+    font-size: 60px;
+    color: white;
+    opacity: 0.8;
+    animation: float 30s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+
+
+/* 
+#ship {
+    opacity: 0.7;
+    position: fixed;
+
+
+    left: 70%; 
+    transform: translateX(-50%) rotate(5deg); 
+    animation: oscillate 8s infinite;
+
+    @media screen and (max-width: 768px) {
+        width: 200px;
+        height: 200px;
+        top: 40%;
+    }
+
+
+    
+} */
+
+#ship {
+    opacity: 0.7;
+    position: fixed;
+    left: 70%; /* Centramos horizontalmente */
+    transform: translateX(-50%) rotate(5deg); /* Inicialmente rotado 5 grados */
+    animation: oscillate 8s infinite; /* Aplica la animación */
+
+    /* Estilos base */
+    width: 300px;
+    height: 300px;
+    top: 30%; /* Centramos verticalmente */
+
+    @media screen and (max-width: 768px) {
+        width: 200px;
+        height: 200px;
+        top: 70%;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        width: 400px;
+        height: 400px;
+        top: 28%;
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 500px;
+        height: 500px;
+        top: 36%;
+    }
+}
+
+
+
+
+
+
+
+/* Define la animación de oscilación */
+@keyframes oscillate {
+    0% {
+        transform: translateX(-50%) rotate(5deg); /* Estado inicial */
+    }
+    50% {
+        transform: translateX(-50%) rotate(-5deg); /* Rotación hacia el lado contrario */
+    }
+    100% {
+        transform: translateX(-50%) rotate(5deg); /* Regresa al estado inicial */
+    }
+}
+
+
+
+
+#letra {
+ 
+    position: absolute;
+    top: 26px;
+    left: 60px;
+    transform: translateX(-50%);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}

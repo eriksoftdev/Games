@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div id="game-container">
+        <select name="" id="letra">
+            <option value="0" selected disabled>Elegir letra</option>
+            <option value="1">m</option>
+            <option value="2">s</option>
+            <option value="3">p</option>
+            <option value="4">l</option>
+            <option value="5">t</option>
+            <option value="6">d</option>
+        </select>
+        
+
+        <div id="sea">
+            <img src="img/ship.png"  width="350px" height="350px" alt="" id="ship">
+            <div class="wave"></div>
+            <div class="wave1"></div>
+            <div class="wave2"></div>
+        </div>
+        <div id="target-syllable">Dispara a: ma</div>
+        <div id="score-container">
+            <div id="score">Puntuación: 0</div>
+            <div id="misses">Fallas: 0</div>
+        </div>
+    </div>
+        <script src="main.js"></script>    
+</body>
+
+</html>

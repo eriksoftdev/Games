@@ -1,0 +1,13 @@
+
+/*estilos correspondientes a la page2*/
+
+.container2 {
+  place-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  text-align: center;
+}
+.item-m {
+  grid-column: 1/3;
+}

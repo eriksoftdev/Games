@@ -1,0 +1,68 @@
+body{
+  background-image: url(images/pencils.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* Perteneciente a la seccion que almacena los dos contenendores "container" y "banco" */
+.section {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+
+/* Correspondiente al contenedor "container"  el cual muestra la imagen y el elemento div con la propiedad drop */
+.container {
+  border-radius: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 124, 128, 0.5);
+}
+
+
+/* 
+Estiliza el elemento div con la clase "origin" dentro del contenedor "container" para que aparezca en una grilla de 2 columnas 
+una para la imagen y la otra para el elemento div destino */
+.origin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+ .origin > #target:hover {
+    box-shadow: lightblue 0 0 30px;
+} 
+
+/* corresponde a las silabas que aparecen en un grid de 6x2 */
+
+.banco {
+row-gap: 10px;
+  padding: 20px;
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Estiliza el contenedor banco, estableciendo un ancho de 122px y alto de 74px al tamaño de las 
+imagenes , tambien el comportamiento del cursor al pasar por encima */
+
+.banco > div {
+  border: dashed 4px lightblue;
+  width: 122px;
+  height: 74px;
+  cursor: move;
+}
+
+/* Establece al div destino un ancho y un alto a su vez un color de fondo */
+#target {
+  background-color:lightblue;
+  width: 122px;
+  height: 74px;
+}
+
+.hover-effect {
+  box-shadow: red 0 0 30px;
+}

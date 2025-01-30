@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="consonante">
+          <div>m</div>
+          <div>m</div>
+          <div>m</div>
+          <div>m</div>
+          <div>m</div>
+        </div>
+        <div class="path">
+          <div class="grid-item"  >
+            <canvas id="canvas1" width="900px" height="120px"></canvas>
+          </div>
+
+          <div class="grid-item"">
+            <canvas id="canvas2" width="900px" height="120px"></canvas>
+            
+         
+          </div>
+
+          <div class="grid-item"">
+            <canvas id="canvas3" width="900px" height="120px"></canvas>
+          </div>
+
+          <div class="grid-item">
+            <canvas id="canvas4" width="900px" height="120px"></canvas>
+          </div>
+
+          <div class="grid-item">
+            <canvas id="canvas5" width="900px" height="120px"></canvas>
+          </div>
+
+        </div>
+
+        <div class="vocal">
+          <div>a</div>
+          <div>e</div>
+          <div>i</div>
+          <div>o</div>
+          <div>u</div>
+        </div>
+        
+      </div>
+
+      <footer class="grid-item">
+        <input placeholder="Escriba una consonante" type="text" id="inputText" maxlength="1" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')">
+        <button onclick="plasmarTexto()">Aplicar</button>
+
+      </footer> 
+    
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

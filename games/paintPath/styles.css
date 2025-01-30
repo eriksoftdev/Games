@@ -1,0 +1,51 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 6vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight:  bold;
+    color: white;
+   background-image: url('images/classroom.png'); 
+    background-size: cover;
+    background-color: burlywood;
+  }
+
+
+  .content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-auto-rows: minmax(100, auto);
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  
+  
+  canvas {
+    width: 100%;
+    height: 100%
+  }
+
+
+  .consonante {
+    background-image: url('images/lib.png');
+    background-size: cover; 
+  }
+
+
+  .vocal {
+    background-image: url('images/lib.png');
+    background-size: cover; 
+  }
+
+

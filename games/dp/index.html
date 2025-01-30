@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="section">
+      <!-- Esta seccion contiene dos divs contenedores, el primero con la clase "container" y el segundo con la clase "banco"
+      el primer contenedor "container" contiene a su vez dos divs "origin" y "target", origin es el div que contiene la imagen 
+      y target es el div que funciona como destino para el elemento arrastrable que este caso son silabas del contenedor
+  "banco"-->
+  
+      <div class="container">
+        <!-- div origin muestra una imagen contenida en la carpeta images con el nombre apple.png -->
+        <div class="origin">
+          <img src="images/apple.png" />
+          <!-- div "target" tiene las propiedades de drop perteneciente al elemento arrastrable posible 
+          (sílaba ma para este caso) del contenedor "banco", tambien incluye la propiedad ondrop y ondragover relacionadas 
+        a main.js en donde se le asigna que elemento arrastrable se puede soltar-->
+          <div
+            id="target"
+            ondrop="drop1(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <!-- De la misma manera se muestran los demás elementos del contenedor "container" con sus respectivas imagenes y sus
+        posibles elementos arrastrables -->
+
+        <div class="origin">
+          <img src="images/maraca.png" />
+          <div
+            id="target"
+            ondrop="drop2(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+
+        <div class="origin">
+          <img src="images/doll.png" />
+          <div
+            id="target"
+            ondrop="drop5(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <div class="origin">
+          <img src="images/bun.png" />
+          <div
+            id="target"
+            ondrop="drop10(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <div class="origin">
+          <img src="images/butterfly.png" />
+          <div
+            id="target"
+            ondrop="drop3(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+
+        <div class="origin">
+          <img src="images/music.png" />
+          <div
+            id="target"
+            ondrop="drop6(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+
+        <div class="origin">
+          <img src="images/manopla.png" />
+          <div
+            id="target"
+            ondrop="drop4(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <div class="origin">
+          <img src="images/menu.png" />
+          <div
+            id="target"
+            ondrop="dropunique(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <div class="origin">
+          <img src="images/micro.png" />
+          <div
+            id="target"
+            ondrop="drop8(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <div class="origin">
+          <img src="images/bug.png" />
+          <div
+            id="target"
+            ondrop="drop11(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <div class="origin">
+          <img src="images/mina.png" />
+          <div
+            id="target"
+            ondrop="drop9(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+        <div class="origin">
+          <img src="images/bat.png" />
+          <div
+            id="target"
+            ondrop="drop7(event)"
+            ondragover="dragover_handler(event)"
+          ></div>
+        </div>
+      </div>
+      
+      <!-- Este es el div "banco" el cual contiene los elementos arrastrables que se pueden soltar en los div con id "target"
+        tienen la propiedad draggable="true" para que puedan ser arrastrables, y el id que se utiliza para establecer sus destinos
+        posibles para poder ser soltados, cada div en este contenedor muestra una imagen de la carpeta syl con el nombre correspondiente
+        a la sílaba a la que hace referencia.
+        
+        Tenemos un conjunto de doce elementos de la misma forma que el contenedor "container"(destinos),
+        hay silabas repetidas pero con un identificador único ordenados como draggable,draggable1,
+        draggable2...draggable11, id que se utiliza en funciones en main.js
+
+       -->
+
+      <div class="banco">
+        <div>
+          <img id="draggable" draggable="true" src="syl/ma.jpeg" />
+        </div>
+
+        <div>
+          <img id="draggable1" draggable="true" src="syl/mi.jpeg" />
+        </div>
+
+        <div>
+          <img id="draggable2" draggable="true" src="syl/mu.jpeg" />
+        </div>
+        <div>
+          <img id="draggable3" draggable="true" src="syl/mu.jpeg" />
+        </div>
+        <div>
+          <img id="draggable4" draggable="true" src="syl/mu.jpeg" />
+        </div>
+        <div>
+          <img id="draggable5" draggable="true" src="syl/ma.jpeg" />
+        </div>
+        <div>
+          <img id="draggable6" draggable="true" src="syl/mo.jpeg" />
+        </div>
+        <div>
+          <img id="draggable7" draggable="true" src="syl/mo.jpeg" />
+        </div>
+        <div>
+          <img id="draggable8" draggable="true" src="syl/ma.jpeg" />
+        </div>
+        <div>
+          <img id="draggable9" draggable="true" src="syl/ma.jpeg" />
+        </div>
+        <div>
+          <img id="draggable10" draggable="true" src="syl/me.jpeg" />
+        </div>
+        <div>
+          <img id="draggable11" draggable="true" src="syl/mi.jpeg" />
+        </div>
+      </div>
+
+      <!-- El siguiente script es para barajar los elementos del div "banco" así apareceran en un orden aleatorio cada vez
+      que la página es cargada -->
+      <script>
+        function shuffle() {
+          const bancoDiv = document.querySelector(".banco");
+          const hijos = Array.from(bancoDiv.children);
+
+          for (let i = hijos.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [hijos[i], hijos[j]] = [hijos[j], hijos[i]];
+          }
+
+          while (bancoDiv.firstChild) {
+            bancoDiv.firstChild.remove();
+          }
+          hijos.forEach((hijo) => {
+            bancoDiv.appendChild(hijo);
+          });
+        } 
+        shuffle();
+      </script>
+    </section>
+  </body>
+</html>

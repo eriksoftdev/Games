@@ -1,0 +1,15 @@
+/*estilos correspondientes a la page5*/
+
+.container5 {
+  place-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  text-align: center;
+}
+.silabaRandom {
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  grid-column: 1/3;
+}

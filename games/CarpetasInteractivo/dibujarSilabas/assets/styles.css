@@ -1,0 +1,66 @@
+/* estilos pertenecientes a la pagina 8 que muestra la silaba ma,me,mi,mo,mu */
+
+.containerFrameMa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  height: 100vh;
+  text-align: right;
+}
+
+.frame-m {
+  text-align: right;
+}
+.frame-a {
+  text-align: left;
+}
+
+
+
+.canvas-m {
+  background-image: url("../images/arrow-m.png");
+  /* background-image: url("https://static.wixstatic.com/media/f1b215_a6717989186f497e847a711734833166~mv2.png"); */
+}
+
+/* correspondiente a las vocales y sus  fondos, las lineas comentadas son de urls publicas */
+
+.canvas-a {
+  background-image: url("../images/arrow-au.png");
+  /* background-image: url("https://static.wixstatic.com/media/f1b215_f29bdf85370b444d9fddb1b80f3b4590~mv2.png"); */
+}
+
+.canvas-e {
+  background-image: url("../images/arrow-e.png");
+  /* background-image: url("https://static.wixstatic.com/media/f1b215_32912d2cbd25426b8402c4762634b6ac~mv2.png"); */
+}
+
+.canvas-i {
+  background-image: url("../images/arrow-i.png");
+  /* background-image: url("https://static.wixstatic.com/media/f1b215_1dd16940e8a349639deea44a04d690b8~mv2.png"); */
+}
+
+.canvas-o {
+  background-image: url("../images/arrow-o.png");
+  /* background-image: url("https://static.wixstatic.com/media/f1b215_0e1587b138b94f29a097574eab69a9a4~mv2.png"); */
+}
+.canvas-u {
+  background-image: url("../images/arrow-au.png");
+  /* background-image: url("https://static.wixstatic.com/media/f1b215_f29bdf85370b444d9fddb1b80f3b4590~mv2.png"); */
+}
+
+/*estilos correspondientes a los botones*/
+
+.otraVocal {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  float: left;
+  font-size: 30px;
+  border-radius: 20px;
+  padding: 15px;
+  background-color: rgb(37, 150, 190);
+  color: white;
+  border: 1px solid white;
+}
+.otraVocal:hover {
+  box-shadow: 0 0 50px gold;
+}

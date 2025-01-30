@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="menu">
+            <div>
+                <select name="" id="select-tabla">
+                    <option value="0" disabled selected>Elegir tabla</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option value="3">4</option>
+                    <option value="4">5</option>
+                    <option value="5">6</option>
+                    <option value="6">7</option>
+                    <option value="7">8</option>
+                    <option value="8">9</option>
+                </select>
+            </div>
+
+            <div class="aciertos">
+                <p>Aciertos: 0</p>
+            </div>
+
+
+
+            <div>
+
+                <select name="" id="select-nivel">
+                    <option value="0" disabled selected>Elegir nivel</option>
+                    <option value="1">Fácil</option>
+                    <option value="2">Medio</option>
+                    <option value="3">Difícil</option>
+                </select>
+
+                <!--             funcionalidad de youtube  -->
+
+
+                <div id="light">
+                    <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+
+                    <iframe id="VisaChipCardVideo" width="600" height="360"
+                        src="https://www.youtube.com/embed/tbdqMzuKA9I?si=d-JEL7Drxe7gXJ-m" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div id="fade" onClick="lightbox_close();"></div>
+
+
+            </div>
+
+
+
+            <div class="errors">
+                <p>Errores: 0</p>
+
+            </div>
+
+            <div>
+                <button href="#" onclick="lightbox_open();">Ver video</button>
+             </div>
+
+             <div class="reiniciar">
+                <button onclick="reiniciar()" >Reiniciar</button>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="ice-cream">
+            <div class="drop-icecream">
+            </div>
+
+            <div class="cono">
+                <div class="tabla"></div>
+            </div>
+
+        </div>
+
+        <div class="fondobolaice">
+
+
+
+
+            <div class="bola-ice">
+
+                <div class="bola1" draggable="true">
+                    <div class="texto"></div>
+                </div>
+
+                <div class="bola2" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+                <div class="bola3" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+                <div class="bola4" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+                <div class="bola5" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+                <div class="bola6" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+                <div class="bola7" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+                <div class="bola8" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+                <div class="bola9" draggable="true">
+                    <div class="texto"></div>
+                </div>
+
+                <div class="bola10" draggable="true">
+                    <div class="texto"></div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+/*estilos correspondientes a la page4*/
+.container4 {
+  place-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  text-align: center;
+}
+.video {
+  grid-column: 1/3;
+}
